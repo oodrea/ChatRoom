@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block content %}
+<form method="post" class="buttons">
+  <h3>Enter The Chat Room</h3>
+  <div>
+    <label>Name:</label>
+    <input
+      type="text"
+      placeholder="Pick a name!"
+      name="name"
+      value="{{name}}"
+    />
+  </div>
+  <div class="join">
+    <div>
+      <label>IP Address:</label>
+      <input
+        type="text"
+        placeholder="Enter IP Address"
+        name="ip_address"
+        value="{{ip_address}}"
+        style="margin-right: 10px;"
+      />
+    </div>
+    <div>
+      <label>Port Number:</label>
+      <input
+        type="text"
+        placeholder="Enter Port Number"
+        name="port_number"
+        value="{{port_number}}"
+        style="margin-right: 10px;"
+      />
+    </div>
+    <button type="submit" name="join">Join a Room</button>
+  </div>
+
+  <button type="submit" name="create" class="create-btn">Create a Room</button>
+  {% if error %}
+  <ul>
+    <li>{{error}}</li>
+  </ul>
+  {% endif %}
+</form>
+{% endblock %}
